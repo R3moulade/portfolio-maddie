@@ -1,0 +1,16 @@
+.sidebar {
+    background-color: aquamarine;
+    width: 250px;
+    margin-top: 30px;
+    padding: 10px;
+    height: 100%;
+    text-align: center;
+}
+.profile img {
+  width: 200px;
+  border-radius: 100%;
+
+}
+.some-icons img {
+  width: 50px;
+}

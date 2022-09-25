@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="posts.css">
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <main>
+        <div class="sidebar">
+            <div class="profile">
+                <img src="spider.png" alt="profile picture">
+                <h2>Maddie Dyrby Hansen</h2>
+            </div>
+            <div class="navlinks">
+                <a href="#aboutme">About Me</a> <br>
+                <a href="#projects">Projects</a> <br>
+                <a href="#skills">Skills</a> <br>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="some-icons">
+                <a href="www.linkedin.com/in/maddie-dyrby-hansen-a571a3220" target="_blank"><img src="linkedin-logo.png" alt=""></a>
+                <a href="https://www.instagram.com/remoulad3/" target="_blank"><img src="ig-logo.png" alt=""></a>
+                <a href="" target="_blank"><img src="ig-logo.png" alt=""></a>
+            </div>
+        </div>
+    <div class="posts">
+            <div class="aboutme" id="aboutme">
+                <img src="aboutme.PNG" alt="">
+                <!-- put the img as background in div  -->
+        </div>
+
+            <div class="stickynotes" id="projects">
+                <img src="artnote.PNG" onclick="openPopup()" alt="">
+                <img src="audionote.PNG" onclick="openPopup()" alt=""> <br>
+                <img src="writingnote.PNG" onclick="openPopup()" alt="">
+                <img src="othernote.PNG" onclick="openPopup()" alt="">
+            </div>
+
+            <div class="comics">
+                <img src="supermarketfront.PNG" alt="">
+                <img src="closetdoorfront.png" alt="">
+            </div>
+            
+            <div class="websiteprojects">
+                <a href="https://r3moulade.github.io/Mobile-First/index.html" target="_blank"><img src="genbrunicon.PNG" onclick="" alt=""></a>
+                <h3>GENBRUN</h3>
+                <a href="https://plamenmichev.github.io/klinik-foniks-v2/index.html" target="_blank"><img src="klinikicon.PNG" onclick="" alt=""></a>
+                <h3>KLINIK FØNIKS</h3>
+            </div>
+
+            <div class="skills" id="skills">
+                <img src="skills.PNG" alt="">
+            </div>
+
+            <div class="contact" id="contact">
+                <img src="kontaktmig.PNG" alt="">
+            </div>
+    </div>
+
+      </main>
+      <div class="popup" id="popup">
+                    <button type="button" onclick="closePopup()">Close</button>
+        </div>
+            
+
+            
+
+    <script src="javascript.js"></script>
+    <script type="module">
+        fetch("https://wordpress.maddiehansen.dk/wp-json/wp/v2/posts?_embed")
+        .then(res => {
+            return res.json();
+            // parses the data as json - converts json into javascript
+            //otherwise you will only see metadata in the console
+        })
+        .then(data => {
+            data.forEach(post => {
+                //forEach loop
+                const markup = `${post.content.rendered}`
+                //makes the image data into an html element
+                document.querySelector(".popup").insertAdjacentHTML('afterbegin', markup)
+                //inserts the markup (images) into the html
+            })
+            //
+        })
+        .catch(error => console.log(error));
+
+
+        // .then(function (data) {
+        //     return data.json();
+        // })
+        // .then (function (post) {
+        //     model.initialize(post.acf.image);
+        // }) 
+        // .catch(function(error) {
+        //     console.log("Service is not available" + error);
+        // });
+    </script>
+</body>
+</html>

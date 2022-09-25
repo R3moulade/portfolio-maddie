@@ -1,0 +1,13 @@
+.posts {
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+}
+.aboutme img, .websiteprojects img, .skills img, .contact img {
+  width: 35%;
+}
+
+  .stickynotes img, .comics img {
+    cursor: pointer;
+    width: 17.5%;
+  }
