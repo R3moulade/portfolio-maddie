@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-    
+    <div class="sb-container"></div>
         <div class="sidebar">
             <div class="profile">
                 <img src="spider.png" alt="profile picture">
@@ -35,6 +35,12 @@
         </div>
 
 <main>
+    <div class="popup" id="popup-art">
+        <button type="button" onclick="closePopup()">Close</button>
+    </div>
+    <div class="popup" id="popup-audio">
+        <button type="button" onclick="closePopup()">Close</button>
+    </div>
     <div class="posts">
             <div class="aboutme" id="aboutme">
                 <div><img src="aboutme.PNG" alt=""></div>
@@ -68,35 +74,44 @@
             <div class="contact" id="contact">
                 <img src="kontaktmig.PNG" alt="">
             </div>
-    </div>
-
-      </main>
-      <div class="popup" id="popup">
-                    <button type="button" onclick="closePopup()">Close</button>
-        </div>
+   
+    </main>
+    
+   
+    
             
 
             
 
-    <script src="javascript.js"></script>
-    <script type="module">
-        fetch("https://wordpress.maddiehansen.dk/wp-json/wp/v2/posts?_embed")
-        .then(res => {
-            return res.json();
-            // parses the data as json - converts json into javascript
-            //otherwise you will only see metadata in the console
+<script src="javascript.js"></script>
+<script type="module">
+    fetch("https://wordpress.maddiehansen.dk/wp-json/wp/v2/posts?_embed")
+    .then(res => {
+        return res.json();
+        // parses the data as json - converts json into javascript
+        //otherwise you will only see metadata in the console
+    })
+    .then(data => {
+        data.forEach(post => {
+            //forEach loop
+            const markupImages = `${post.content.rendered}`
+            //makes the image data into an html element
+            document.querySelector("#popup-art").insertAdjacentHTML('afterbegin', markupImages)
+            //inserts the markup (images) into the html
         })
-        .then(data => {
-            data.forEach(post => {
-                //forEach loop
-                const markup = `${post.content.rendered}`
-                //makes the image data into an html element
-                document.querySelector(".popup").insertAdjacentHTML('afterbegin', markup)
-                //inserts the markup (images) into the html
-            })
             //
+    })
+    .then(data => {
+        data.forEach(post => {
+            //forEach loop
+            const markupAudio = `${post.acf.audio}`
+            //makes the image data into an html element
+            document.querySelector("#popup-audio").insertAdjacentHTML('afterbegin', markupAudio)
+            //inserts the markup (images) into the html
         })
-        .catch(error => console.log(error));
+            
+    })
+    .catch(error => console.log(error));
 
 
         // .then(function (data) {

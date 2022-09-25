@@ -3,7 +3,7 @@ main {
    width: 530px;
 }
 .posts {
-   
+  margin-top: 20px;
 }
 .aboutme img, .websiteprojects img, .skills img, .contact img {
   width: 100%;
@@ -20,7 +20,7 @@ main {
 
   .stickynotes img, .comics img {
     cursor: pointer;
-    width: 49.5%;
+    width: 49%;
   }
 
 @media only screen and (max-width: 1440px) {
