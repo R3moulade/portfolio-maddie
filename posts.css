@@ -1,9 +1,12 @@
+main {
+   margin-top: 20px;
+   width: 530px;
+}
 .posts {
-    margin-top: 20px;
-    padding: 10px;
+   
 }
 .aboutme img, .websiteprojects img, .skills img, .contact img {
-  width: 35%;
+  width: 100%;
 }
 .aboutme {
   position: relative;
@@ -17,14 +20,13 @@
 
   .stickynotes img, .comics img {
     cursor: pointer;
-    width: 17.5%;
+    width: 49.5%;
   }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1440px) {
   .introtext {
-    
-    bottom: 2vh;
-    left: 2vh;
-    font-size: 2vh;
+    bottom: 205px;
+    left: 90px;
+    font-size: 15pt;
   }
 }
