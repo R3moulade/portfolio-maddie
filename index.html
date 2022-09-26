@@ -30,34 +30,35 @@
             <div class="some-icons">
                 <a href="www.linkedin.com/in/maddie-dyrby-hansen-a571a3220" target="_blank"><img src="linkedin-logo.png" alt=""></a>
                 <a href="https://www.instagram.com/remoulad3/" target="_blank"><img src="ig-logo.png" alt=""></a>
-                <a href="" target="_blank"><img src="ig-logo.png" alt=""></a>
             </div>
         </div>
 
 <main>
-    <div class="popup" id="popup-art">
-        <button type="button" onclick="closePopup()">Close</button>
-    </div>
-    <div class="popup" id="popup-audio">
+    <div class="popup" id="popup">
         <button type="button" onclick="closePopup()">Close</button>
     </div>
     <div class="posts">
             <div class="aboutme" id="aboutme">
-                <div><img src="aboutme.PNG" alt=""></div>
-                <div class="introtext">Bottom left</div>
+                <img src="aboutme1.PNG" alt="">
+                <article class="notepadsection">
+                    <p style="border-top: 3px solid rgb(68, 137, 216);"><span>│</span>lalalala</p>
+                    <p><span>│</span>lalalala</p>
+                </article>
+                <img src="aboutme2.PNG" alt="">
+                
                 <!-- put the img as background in div  -->
             </div>
             
             <div class="stickynotes" id="projects">
-                <img src="artnote.PNG" onclick="openPopup()" alt="">
-                <img src="audionote.PNG" onclick="openPopup()" alt=""> <br>
-                <img src="writingnote.PNG" onclick="openPopup()" alt="">
-                <img src="othernote.PNG" onclick="openPopup()" alt="">
+                <img src="artnote.PNG" onclick="openPopup()" alt="Art stickynote">
+                <a href="https://ereolen.dk/ting/object/870970-basis%3A61825932" target="_blank"><img src="audionote.PNG" alt="Audio stickynote"></a> <br>
+                <img src="writingnote.PNG" alt="Writing stickynote">
+                <img src="othernote.PNG" alt="Other stickynote">
             </div>
 
             <div class="comics">
-                <img src="supermarketfront.PNG" alt="">
-                <img src="closetdoorfront.png" alt="">
+                <a href="https://www.facebook.com/photo?fbid=188230150253412&set=pcb.188230296920064" target="_blank"><img src="supermarketfront.PNG" alt="supermarket comic front"></a>
+                <a href="https://www.facebook.com/photo?fbid=188230746920019&set=pcb.188230936920000" target="_blank"><img src="closetdoorfront.png" alt="closet door comic front"></a>
             </div>
             
             <div class="websiteprojects">
@@ -73,6 +74,10 @@
 
             <div class="contact" id="contact">
                 <img src="kontaktmig.PNG" alt="">
+                <article class="notepadsection">
+                    <p style="border-top: 3px solid rgb(68, 137, 216);"><span>│</span>lalalala</p>
+                    <p><span>│</span>lalalala</p>
+                </article>
             </div>
    
     </main>
@@ -94,22 +99,12 @@
     .then(data => {
         data.forEach(post => {
             //forEach loop
-            const markupImages = `${post.content.rendered}`
+            const markup = `${post.content.rendered}`
             //makes the image data into an html element
-            document.querySelector("#popup-art").insertAdjacentHTML('afterbegin', markupImages)
+            document.querySelector(".popup").insertAdjacentHTML('afterbegin', markup)
             //inserts the markup (images) into the html
         })
             //
-    })
-    .then(data => {
-        data.forEach(post => {
-            //forEach loop
-            const markupAudio = `${post.acf.audio}`
-            //makes the image data into an html element
-            document.querySelector("#popup-audio").insertAdjacentHTML('afterbegin', markupAudio)
-            //inserts the markup (images) into the html
-        })
-            
     })
     .catch(error => console.log(error));
 

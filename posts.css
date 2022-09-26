@@ -1,9 +1,12 @@
 main {
    margin-top: 20px;
-   width: 530px;
+   width: 35%;
 }
 .posts {
   margin-top: 20px;
+}
+.posts div {
+  margin-bottom: 20px;
 }
 .aboutme img, .websiteprojects img, .skills img, .contact img {
   width: 100%;
@@ -11,17 +14,27 @@ main {
 .aboutme {
   position: relative;
 }
-.introtext {
-  position: absolute;
-  bottom: 280px;
-  left: 130px;
-  font-size: 20pt;
+.notepadsection {
+  background-color: white;
+  border-left: 5px solid black;
+  border-right: 5px solid black;
 }
-
+.notepadsection p {
+  border-bottom: 3px solid rgb(68, 137, 216);
+  font-size: 1.2vw;
+  margin-left: 5.5vw;
+}
+span {
+  color: red;
+}
   .stickynotes img, .comics img {
     cursor: pointer;
     width: 49%;
   }
+h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
 @media only screen and (max-width: 1440px) {
   .introtext {
