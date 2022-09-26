@@ -14,15 +14,27 @@ main {
 .aboutme {
   position: relative;
 }
-.notepadsection {
+.notepadsection, .dotpadsection {
   background-color: white;
-  border-left: 5px solid black;
-  border-right: 5px solid black;
+  border-left: 0.4vw solid black;
+  border-right: 0.4vw solid black;
+  margin-top: -0.5vh;
 }
 .notepadsection p {
   border-bottom: 3px solid rgb(68, 137, 216);
   font-size: 1.2vw;
   margin-left: 5.5vw;
+  color: rgb(20, 20, 167);
+}
+.dotpadsection p {
+  border-bottom: 7px dotted rgb(117, 117, 117);
+  font-size: 1.2vw;
+  
+  color: rgb(20, 20, 167);
+  background-image: linear-gradient(to right, #000 10%, rgba(255, 255, 255, 0) 0%);
+        background-position: bottom;
+        background-size: 10px 1px;
+        background-repeat: repeat-x;
 }
 span {
   color: red;
