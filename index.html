@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="posts.css">
     <link rel="stylesheet" href="popup.css">
 </head>
+<!-- sidebar nav -->
 <body>
     <div class="sb-container"></div>
         <div class="sidebar">
@@ -31,59 +32,88 @@
             <div class="some-icons">
                 <a href="https://www.linkedin.com/in/maddie-dyrby-hansen-a571a3220" target="_blank"><img src="linkedin-logo.png" alt="linkedin logo"></a>
                 <a href="https://www.instagram.com/remoulad3/" target="_blank"><img src="ig-logo.png" alt="instagram logo"></a>
-                <a href="" target="_blank"><img src="cv.PNG" alt="CV logo"></a>
+                <a href="cv.pdf" target="_blank"><img src="cv.PNG" alt="CV logo"></a>
             </div>
         </div>
 
 <main>
+    <!-- popup for art sticky note with fetched data -->
     <div class="popup" id="popup">
-        <button type="button" onclick="closePopup()">Close</button>
+        <button type="button" onclick="closePopup()">Luk</button>
     </div>
+    <!-- posts -->
     <div class="posts">
             <div class="aboutme" id="aboutme">
                 <img src="aboutme1.PNG" alt="øverste del af 'om mig'">
                 <article class="notepadsection">
-                    <p style="border-top: 3px solid rgb(68, 137, 216);"><span>│</span>lalalala</p>
-                    <p><span>│</span>lalalala</p>
+                    <p style="border-top: 3px solid rgb(68, 137, 216);"><span>│</span>jeg leder efter en praktikplads for mit</p>
+                    <p><span>│</span>multimediedesign studie! Jeg søger efter et team</p>
+                    <p><span>│</span>hvor jeg har mulighed for at udvikle mine</p>
+                    <p><span>│</span>færdigheder inden for progammering og kreative</p>
+                    <p><span>│</span>kompetencer. Jeg synes det er mega fedt at</p>
+                    <p><span>│</span>få lov til at kompinere mine to hjernehalvdele</p>
+                    <p><span>│</span>for at lave de fedeste kreationer!</p>
                 </article>
                 <img src="aboutme2.PNG" alt="nederste del af 'om mig'">
                 
                 <!-- put the img as background in div  -->
             </div>
+
             
+    <!-- sticky notes -->
             <div class="stickynotes" id="projects">
                 <img src="artnote.PNG" onclick="openPopup()" alt="Art stickynote">
                 <a href="https://ereolen.dk/ting/object/870970-basis%3A61825932" target="_blank"><img src="audionote.PNG" alt="Audio stickynote"></a> <br>
-                <img src="writingnote.PNG" alt="Writing stickynote">
-                <img src="othernote.PNG" alt="Other stickynote">
-            </div>
+        
+        <!-- popup for writing sticky note -->
+    <div class="misc-popup" id="writing-popup">
+        <p>Jeg har været medlem af Wenche Vogtmann Thinnesens forfatterhold lige siden 2016, og har været med til at udgive 4 bøger på holdet.</p>
+        <p>Vi er i gang med vores 5. bog.</p>
+        <button type="button" onclick="closeWritingPopup()">Luk</button>
+    </div>
+    <!-- end of popup -->
+    <!-- popup for other sticky note -->
+        <div class="misc-popup" id="other-popup">
+            <p>Æ' noe a' se her</p>
+            <button type="button" onclick="closeOtherPopup()">Luk</button>
+        </div>
+        <!-- end of popup -->
 
+                <img src="writingnote.PNG" onclick="openWritingPopup()" alt="Writing stickynote">
+    
+                <img src="othernote.PNG" onclick="openOtherPopup()" alt="Other stickynote">
+            </div>
+           
+<!-- comics -->
             <div class="comics">
                 <a href="https://www.facebook.com/photo?fbid=188230150253412&set=pcb.188230296920064" target="_blank"><img src="supermarketfront.PNG" alt="supermarket comic front"></a>
                 <a href="https://www.facebook.com/photo?fbid=188230746920019&set=pcb.188230936920000" target="_blank"><img src="closetdoorfront.png" alt="closet door comic front"></a>
             </div>
-            
+            <!-- website projects -->
             <div class="websiteprojects" id="websiteprojects">
                 <a href="https://r3moulade.github.io/Mobile-First/index.html" target="_blank"><img src="genbrunicon.PNG" onclick="" alt=""></a>
                 <h3>GENBRUN</h3>
                 <a href="https://plamenmichev.github.io/klinik-foniks-v2/index.html" target="_blank"><img src="klinikicon.PNG" onclick="" alt=""></a>
                 <h3>KLINIK FØNIKS</h3>
             </div>
-
+<!-- skills -->
             <div class="skills" id="skills">
                 <img src="skills.PNG" alt="">
                 <article class="dotpadsection">
-                    <p>lalalala</p>
-                    <p>lalalala</p>
+                    <p>Jeg er lidt af en Jack of All Trades. Jeg kan lidt af</p>
+                    <p>det hele, og leder efter at komme mere i dybden med og</p>
+                    <p>tilføje til mine skills. Jeg elsker at lære nye ting,</p>
+                    <p>så hiv fat i mig hvis du har en mentor i maven! :^)</p>
                 </article>
                 <img src="skills2.PNG" alt="">
             </div>
-
+<!-- contact -->
             <div class="contact" id="contact">
                 <img src="kontaktmig.PNG" alt="øverste del af kontakt mig">
                 <article class="notepadsection">
-                    <p style="border-top: 3px solid rgb(68, 137, 216);"><span>│</span>lalalala</p>
-                    <p><span>│</span>lalalala</p>
+                    <p style="border-top: 3px solid rgb(68, 137, 216);"><span>│</span>E-mail: maddie.dyrby.hansen@outlook.dk</p>
+                    <p><span>│</span>Mobil: +45 52 40 40 11</p>
+                    <p><span>│</span>Bosat: Viby J, 8260</p>
                 </article>
                 <img src="kontaktmig2.PNG" alt="nederste del af kontakt mig">
             </div>
@@ -93,6 +123,7 @@
             
 
 <script src="javascript.js"></script>
+<!-- fetch of data javascript -->
 <script type="module">
     fetch("https://wordpress.maddiehansen.dk/wp-json/wp/v2/posts?_embed")
     .then(res => {

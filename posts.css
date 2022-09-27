@@ -29,9 +29,9 @@ main {
 .dotpadsection p {
   /* border-bottom: 7px dotted rgb(117, 117, 117); */
   font-size: 1.2vw;
-  padding-top: 10px;
-  padding-bottom: 5px;
-  padding-left: 80px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  padding-left: 40px;
   color: rgb(20, 20, 167);
   background-image: linear-gradient(to right, rgb(107, 107, 107) 10%, rgba(255, 255, 255, 0) 0%);
         background-position: bottom;
